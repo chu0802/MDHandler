@@ -1,0 +1,3 @@
+model_path: 'model'
+hash_table_path: 'hash_table.pkl'
+ 
