@@ -77,12 +77,19 @@ For model handling, one should only have to make **3 changes**.
     Here is the default directory hirarchy in MDH:
     ```
     # -- model_path/ (saving models in this path)
+    #  |
     #  |__ model_1/ (in a hashing form)
+    #  |  |
     #  |  |__ log/ (training log, for tensorboard)
+    #  |  |
     #  |  |__ 1000.pt (a model checkpoint)
+    #  |  |
     #  |  |__ 2000.pt (another model checkpoint)
+    #  |  
     #  |__ model_2/
+    #     |
     #     |__ log/
+    #     |
     #     |__ 1000.pt
     #  .
     #  .
