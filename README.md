@@ -67,7 +67,7 @@ For model handling, one should only have to make **3 changes**.
     ```
 2. Update MDH when storing a model.
 
-    When storing a model, update MDH according to its configuraiton.
+    When storing a model, update MDH according to the model's configuraiton.
 
     ```
     mdh.update(<config>)
