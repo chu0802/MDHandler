@@ -24,8 +24,9 @@ if __name__ == '__main__':
     # ----- saving a model -----
     # After training, while saving a model:
 
-    # the argument should be a dictionary, one could also build an object o, and directly save o.__dict__
-    mdh.update(args.model)
+    # the argument should be a dictionary (i.e., a config), one could also build an object o, and directly save o.__dict__
+    cfg = config_loading(args.model)
+    mdh.update(cfg)
 
     # The default directory hirarchy in MDH:
     # -- model_path/ (saving multiple models in this path)
