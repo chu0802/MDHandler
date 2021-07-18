@@ -1,4 +1,4 @@
-from mdh.util import config_loading, model_handler
+from mdh.util import config_loading, ModelHandler
 
 import argparse
 
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     # Load mdh, one should specify:
     # 1). model_path: the directory saving multiple models
     # 2). hash_table_path: a pickle file saving the mapping relationship (one doesn't have to acces this file in general)
-    mdh = model_handler(cfg['model_path'], cfg['hash_table_path'])
+    mdh = ModelHandler(cfg['model_path'], cfg['hash_table_path'])
 
     # ----- training ------ 
     # (one should also pass MDH to the training process, or save it as an attribute in a model object)

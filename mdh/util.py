@@ -1,14 +1,38 @@
 import yaml
 import pickle as pk
 import hashlib
-from pathlib import Path, PurePath
+from pathlib import Path
 import os
 from collections import defaultdict
+from tensorboard import program
 
 def config_loading(cfg_path):
     return yaml.load(open(cfg_path, 'r'), Loader=yaml.FullLoader) if cfg_path is not None else None
 
-class model_handler:
+class TensorboardTool:
+    def __init__(self, host):
+        self.processes = {}
+        self.host = host
+
+    def run(self, logdir, cfg):
+        # Start tensorboard server
+        tb = program.TensorBoard()
+        tb.configure(argv=[None, '--logdir', logdir, '--host', self.host])
+        url = tb.launch()
+        self.processes[str(cfg)] = url
+
+    def list(self, cont='c'):
+        print('All starting up processes: ')
+        for k, v in self.processes.items():
+            print('%s: %s' % (k, v))
+
+        print('press %s to continue...' % (cont))
+        while True:
+            opt = input()
+            if opt == cont:
+                break
+
+class ModelHandler:
     def __init__(self, model_dir, hash_table_path, title=None):
         self.model_dir = Path(model_dir)
         self.hash_table_path = hash_table_path
