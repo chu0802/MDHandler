@@ -17,7 +17,7 @@ if __name__ == '__main__':
     mdh = ModelHandler(
         config['model_path'],
         config['hash_table_path'], 
-        title='Tensorboard Binding System'
+        title='Tensorboard Binding System',
     )
 
     # load tbtool
