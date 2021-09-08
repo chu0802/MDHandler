@@ -57,7 +57,7 @@ For model handling, one should only have to make **3 changes**.
     
     * hash table path: MDH using a hash table to map and handle models, one should determine the stored hash table path beforehand.
 
-    ```
+    ```python
     from mdh import model_handler
     mdh = model_handler(
         <model_path>,
