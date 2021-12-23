@@ -51,11 +51,11 @@ For model handling, one should only have to make **3 changes**.
 
 1. Build a configuraiton for loading MDH.
 
-    When loading MDH, one should specify the **model path**, and the **hash table path**. (Better stored in a yaml-based configuration file, see the [sample config](./sample_config/sample_config.yaml)) 
+    When loading MDH, one should specify the **model path**, and the **hash table name**. (Better stored in a yaml-based configuration file, see the [sample config](./sample_config/sample_config.yaml)) 
    
     * model path: The directory storing all models.
     
-    * hash table path: MDH using a hash table to map and handle models, one should determine the stored hash table path beforehand.
+    * hash table name: MDH using a hash table to map and handle models, one should determine the stored hash table name beforehand.
 
     ```python
     from mdh import model_handler
