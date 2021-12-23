@@ -61,7 +61,7 @@ For model handling, one should only have to make **3 changes**.
     from mdh import model_handler
     mdh = model_handler(
         <model_path>,
-        <hash_table_path>,
+        <hash_table_name>,
         <title> # if needed, one could add a title when selecting models
     )
     ```
@@ -87,12 +87,12 @@ For model handling, one should only have to make **3 changes**.
     #  |  |__ 2000.pt (another model checkpoint)
     #  |  
     #  |__ model_2/
-    #     |
-    #     |__ log/
-    #     |
-    #     |__ 1000.pt
-    #  .
-    #  .
+    #  |  |
+    #  |  |__ log/
+    #  |  |
+    #  |  |__ 1000.pt
+    #  |
+    #  |＿ <hash_table_name>.pkl (Save your hash info)
     #  .
     ```
     
